@@ -27,92 +27,92 @@ enum layer_number {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* QWERTY
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |   1  |   2  |   3  |   4  |   5  |   6  |                    |   7  |   8  |   9  |   0  |   -  |  =   |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | GESC |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |BACKSP|
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
- * |------+------+------+------+------+------| LOWER |    | RAISE |------+------+------+------+------+------|
- * | LSPO |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | RSPC |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |LCTRL | LALT | LGUI | / SPACE /       \ENTER \  | RGUI |  [   |  ]   |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
+,-----------------------------------------.                    ,-----------------------------------------.
+|   1  |   2  |   3  |   4  |   5  |   6  |                    |   7  |   8  |   9  |   0  |   -  |  =   |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+| GESC |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  \   |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+| TAB  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+|------+------+------+------+------+------| LOWER |    | RAISE |------+------+------+------+------+------|
+| LSPO |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | RSPC |
+`-----------------------------------------/       /     \      \-----------------------------------------'
+                  |LCTRL | LALT | LGUI | / SPACE /       \ENTER \  |BACKSP|  [   |  ]   |
+                  |      |      |      |/       /         \      \ |      |      |      |
+                  `----------------------------'           '------''--------------------'
  */
  [_QWERTY] = LAYOUT( \
-  KC_1,     KC_2,   KC_3,    KC_4,    KC_5,    KC_6,                     KC_7,    KC_8,    KC_9,    KC_0,    KC_MINUS,    KC_EQUAL, \
-  KC_GESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
-  KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-  KC_LSPO,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, MO(_LOWER),    MO(_RAISE), KC_N, KC_M, KC_COMM, KC_DOT,  KC_SLSH,  KC_RSPC, \
-                        KC_LCTRL, KC_LALT, KC_LGUI, KC_SPC, KC_ENT, KC_RGUI, KC_LBRC, KC_RBRC \
+    KC_1,     KC_2,   KC_3,    KC_4,    KC_5,    KC_6,                     KC_7,    KC_8,    KC_9,    KC_0,    KC_MINUS,    KC_EQUAL, \
+    KC_GESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
+    KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+    KC_LSPO,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, MO(_LOWER),    MO(_RAISE), KC_N, KC_M, KC_COMM, KC_DOT,  KC_SLSH,  KC_RSPC, \
+                            KC_LCTRL, KC_LALT, KC_LGUI, KC_SPC, KC_ENT, KC_BSPC, KC_LBRC, KC_RBRC \
 ),
 
 /* LOWER
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |      |      |      |      | >DEL |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------|      | MUTE | VOLD | VOLU |   ~  |   `  |
- * |------+------+------+------+------+------| HERE  |    |       |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      | MPLY | MPRV | MNXT |   \  |   |  |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |LCTRL | LALT | LGUI | /  RGB  /       \ENTER \  | RGUI | BRID | BRIU |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
+,-----------------------------------------.                    ,-----------------------------------------.
+|  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+|      |      |      |      |      |      |                    |      |      |      |      |      |      |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+|      |      |      |      |      |      |-------.    ,-------|      | MUTE | VOLD | VOLU |      |  `   |
+|------+------+------+------+------+------| HERE  |    |       |------+------+------+------+------+------|
+|LSHIFT|      |      |      |      |      |-------|    |-------|      | MPLY | MPRV | MNXT |      |RSHIFT|
+`-----------------------------------------/       /     \      \-----------------------------------------'
+                  |LCTRL | LALT | LGUI | /  RGB  /       \ENTER \  | >DEL | BRID | BRIU |
+                  |      |      |      |/       /         \      \ |      |      |      |
+                  `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT( \
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DELETE,\
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, KC_TILD, KC_GRAVE, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, KC_MPLY, KC_MPRV, KC_MNXT, KC_BSLASH, KC_PIPE, \
-                            KC_LCTRL, KC_LALT, KC_LGUI, MO(_BACKLIGHT), KC_ENT, KC_RGUI, KC_BRID, KC_BRIU \
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX, KC_GRAVE, \
+    KC_LSHIFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, KC_MPLY, KC_MPRV, KC_MNXT, XXXXXXX, KC_RSHIFT, \
+                            KC_LCTRL, KC_LALT, KC_LGUI, MO(_BACKLIGHT), KC_ENT, KC_DEL, KC_BRID, KC_BRIU \
 ),
 
  /* RAISE
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * | NUM1 | NUM2 | NUM3 | NUM4 | NUM5 | NUM6 |                    | NUM7 | NUM8 | NUM9 | NUM0 |   -  |  =   |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CAPS |      |  UP  |      |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | NLCK | LEFT | DOWN |RIGHT |      |      |-------.    ,-------|      |      |      |      |      |      |
- * |------+------+------+------+------+------|       |    | HERE  |------+------+------+------+------+------|
- * |LSHIFT|      |      |      |      |      |-------|    |-------|      |      |      |      |      |RSHIFT|
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |LCTRL | LALT | LGUI | / SPACE /       \ENTER \  | RGUI |  [   |  ]   |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
+,-----------------------------------------.                    ,-----------------------------------------.
+| NUM1 | NUM2 | NUM3 | NUM4 | NUM5 | NUM6 |                    | NUM7 | NUM8 | NUM9 | NUM0 |   -  |  =   |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+|      |      |  UP  |      |      |      |                    |      |      |      |      |      |      |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+|      | LEFT | DOWN |RIGHT |      |      |-------.    ,-------|      |      |      |      |      |      |
+|------+------+------+------+------+------|       |    | HERE  |------+------+------+------+------+------|
+|LSHIFT|      |      |      |      |      |-------|    |-------|      |      |      |      |      |RSHIFT|
+`-----------------------------------------/       /     \      \-----------------------------------------'
+                  |LCTRL | LALT | LGUI | / SPACE /       \ENTER \  |BACKSP|  [   |  ]   |
+                  |      |      |      |/       /         \      \ |      |      |      |
+                  `----------------------------'           '------''--------------------'
  */
 [_RAISE] = LAYOUT( \
-  KC_P1,    KC_P2,      KC_P3,  KC_P4,      KC_P5,      KC_P6,                      KC_P7,   KC_P8,  KC_P9,  KC_P0,  KC_MINUS,   KC_EQUAL, \
-  KC_CAPS,   XXXXXXX,    KC_UP,   XXXXXXX,    XXXXXXX,    XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  KC_NLCK,  KC_LEFT,    KC_DOWN,   KC_RGHT,   KC_F5,   KC_F6,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, \
-  KC_LSHIFT,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX,   _______, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, KC_RSHIFT, \
-                            KC_LCTRL, KC_LALT, KC_LGUI, KC_SPC, KC_ENT, KC_RGUI, KC_LBRC, KC_RBRC \
+    KC_P1,    KC_P2,    KC_P3,    KC_P4,    KC_P5,   KC_P6,                   KC_P7, KC_P8, KC_P9, KC_P0, KC_MINUS, KC_EQUAL, \
+    XXXXXXX,  XXXXXXX,  KC_UP,  XXXXXXX,  XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, KC_LEFT, KC_DOWN,  KC_RGHT,  XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    KC_LSHIFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_RSHIFT, \
+                            KC_LCTRL, KC_LALT, KC_LGUI, KC_SPC, KC_ENT, KC_BSPC, KC_LBRC, KC_RBRC \
 ),
 
- /* RGB TODO:
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    | RGB1 | RGB2 | RGB3 | RGB4 | RGB5 | RGB6 |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    | RGB7 | RGB8 | RGB9 |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------|      |      |      | SAT- | SAT+ |      |
- * |------+------+------+------+------+------| HERE  |    |RGB ON |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |      |      | HUE- | HUE+ |      |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | / HERE  /       \ MODE \  |      | VAL- | VAL+ |
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
+ /* BACKLIGHT TODO:
+,-----------------------------------------.                    ,-----------------------------------------.
+|      |      |      |      |      |      |                    | RGB1 | RGB2 | RGB3 | RGB4 | RGB5 | RGB6 |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+|      |      |      |      |      |      |                    | RGB7 | RGB8 | RGB9 |      |      |      |
+|------+------+------+------+------+------|                    |------+------+------+------+------+------|
+|      |      |      |      |      |      |-------.    ,-------|      |      |      | SAT- | SAT+ |      |
+|------+------+------+------+------+------| HERE  |    |RGB ON |------+------+------+------+------+------|
+|      |      |      |      |      |      |-------|    |-------|      |      |      | HUE- | HUE+ |      |
+`-----------------------------------------/       /     \      \-----------------------------------------'
+                  |      |      |      | / HERE  /       \ MODE \  |      | VAL- | VAL+ |
+                  |      |      |      |/       /         \      \ |      |      |      |
+                  `----------------------------'           '------''--------------------'
  */
-  [_BACKLIGHT] = LAYOUT( \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
-                             _______, _______, _______, _______, _______,  _______, _______, _______ \
-  )
+[_BACKLIGHT] = LAYOUT( \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+                            _______, _______, _______, _______, _______,  _______, _______, _______ \
+)
 };
 
 // Setting BACKLIGHT layer RGB back to default
@@ -154,9 +154,9 @@ char wpm_str[16];
 // #define PREP_FRAMES 1 // uncomment if >1
 
 #define TAP_FRAMES 2
-#define TAP_SPEED 60 // above this wpm value typing animation to triggere
+#define TAP_SPEED 60 // above this wpm value typing animation to trigger
 
-#define ANIM_FRAME_DURATION 100 // how long each frame lasts in ms
+#define ANIM_FRAME_DURATION 150 // how long each frame lasts in ms
 #define SLEEP_TIMER 60000 // should sleep after this period of 0 wpm, may need fixing
 #define ANIM_SIZE 640 // number of bytes in array, minimize for adequate firmware size, max is 1024
 
@@ -264,25 +264,56 @@ static void render_anim(void) {
         }
     }
 }
+
+static void render_logo(void) {
+  static const char PROGMEM my_logo[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x40, 0x40, 0x40,
+    0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xc0, 0xc0, 0xc0, 0x60, 0x60, 0x60, 0x60, 0x60,
+    0xe0, 0xc0, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0xc0, 0xc0, 0xa0, 0x90, 0x90, 0x90, 0x88, 0x88, 0x88, 0x88, 0x8e, 0x89, 0x84, 0x84, 0x84, 0x83,
+    0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0xc0, 0xc0, 0xb0, 0x90,
+    0x8c, 0x8a, 0x8a, 0x84, 0x82, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80,
+    0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0xc0, 0xc0, 0xa0, 0xa0, 0x98, 0x80,
+    0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80,
+    0x80, 0x80, 0x80, 0xf0, 0xfc, 0x1e, 0x07, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x01, 0x03, 0x07, 0x1e, 0xfc, 0xf0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x03, 0x07, 0x05, 0x09, 0x11, 0x31, 0x41, 0x61, 0xa1, 0xa1, 0x21, 0x61, 0x91, 0x21, 0x21, 0x41,
+    0x81, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
+    0x03, 0x05, 0x05, 0x05, 0x0d, 0x15, 0x15, 0x09, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
+    0x01, 0x01, 0x01, 0x03, 0x05, 0x05, 0x09, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
+    0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
+    0x01, 0x01, 0x01, 0x03, 0x1f, 0x3c, 0x70, 0xe0, 0xc0, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x80, 0x80, 0xc0, 0xe0, 0x70, 0x3c, 0x1f, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
+    0x03, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+  };
+
+  oled_write_raw_P(my_logo, sizeof(my_logo));
+}
+
 void oled_task_user(void) {
     if (is_keyboard_master()) {
-        oled_set_cursor(0,0); {
-            oled_write_ln(read_layer_state(), false);
-        }
-        oled_set_cursor(0,1); {
-            oled_write_ln("You sexy bitch.", false);
-        }
-        oled_set_cursor(0,2); {
-
-        }
-        oled_set_cursor(0,3); {
-
-        }
-    // Renders the current keyboard state (layer, lock, caps, scroll, etc)
+        // oled_set_cursor(0,0); {
+        //     oled_write_ln(read_layer_state(), false);
+        // }
+        render_logo();
     } else {
         render_anim();
         oled_set_cursor(0,6); {
-            sprintf(wpm_str, "       WPM: %03d", get_current_wpm());
+            sprintf(wpm_str, "WPM: %03d", get_current_wpm());
             oled_write(wpm_str, false);
         }
     }
@@ -327,8 +358,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case BACKLIGHT:
         if (record->event.pressed) {
           layer_on(_BACKLIGHT);
+          update_tri_layer(_LOWER, _RAISE, _BACKLIGHT);
         } else {
           layer_off(_BACKLIGHT);
+          update_tri_layer(_LOWER, _RAISE, _BACKLIGHT);
         }
         return false;
         break;
